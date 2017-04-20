@@ -1,0 +1,150 @@
+.section-title {
+	font-size: 1.2rem;
+	text-align: center;
+	color: $mainBlack;
+	font-weight: 500;
+
+	@mixin atXtraSmall {
+		font-size: 1rem;
+	}
+
+	@mixin atSmall {
+		font-size: 2rem;
+	}
+
+	@mixin atMedium {
+		font-size: 3.2rem;
+	}
+
+	@mixin atLarge {
+		font-size: 4.3125rem;
+	}
+
+	&--smaller {
+		font-size: .8rem;
+		text-align: center;
+		color: $mainBlack;
+		font-weight: 500;
+
+		@mixin atSmall {
+			font-size: 1.2rem;
+		}
+
+		@mixin atMedium {
+			font-size: 2.2rem;
+		}
+
+		@mixin atLarge {
+			font-size: 3rem;
+			letter-spacing: .01rem;
+		}
+	}
+
+	&--smallest {
+		font-size: .6rem;
+		text-align: center;
+		color: $mainBlack;
+		font-weight: 500;
+
+		@mixin atSmall {
+			font-size: 1rem;
+		}
+
+		@mixin atMedium {
+			font-size: 2rem;
+		}
+
+		@mixin atLarge {
+			font-size: 2.2rem;
+			letter-spacing: .01rem;
+		}
+	}
+
+	&--white {
+		color: $mainWhite;
+	}
+
+	&--no-t-margin {
+		margin-top: 0;
+	}
+
+	&--big-t-margin {
+		margin-top: 2rem;
+
+		@mixin atSmall {
+			margin-top: 2.5rem;
+		}
+
+		@mixin atMedium {
+			margin-top: 3rem;
+		}
+
+		@mixin atLarge {
+			margin-top: 8rem;
+		}
+	}
+
+	&__icon {
+		margin-right: .5rem;
+		width: 1.2rem;
+		transform:translateY(.225rem);
+		display: none;
+
+		@mixin atXtraSmall {
+			display: inline-block;
+			width: 1.2rem;
+			transform:translateY(.125rem);
+		}
+
+		@mixin atSmall {
+			display: inline-block;
+			width: 1.8rem;
+			transform:translateY(.325rem);
+		}
+
+		@mixin atMedium {
+			display: inline-block;
+			width: 2.6rem;
+			transform:translateY(.425rem);
+		}
+
+		@mixin atLarge {
+			display: inline-block;
+			width: 4.6875rem;
+			transform:translateY(.625rem);
+		}
+
+	}
+	&__icon-left {
+		margin-left: .5rem;
+		width: 1.2rem;
+		transform:translateY(.225rem);
+		display: none;
+
+		@mixin atXtraSmall {
+			display: inline-block;
+			width: 1.2rem;
+			transform:translateY(.125rem);
+		}	
+
+		@mixin atSmall {
+			display: inline-block;
+			width: 1.8rem;
+			transform:translateY(.325rem);
+		}
+
+		@mixin atMedium {
+			display: inline-block;
+			width: 2.6rem;
+			transform:translateY(.425rem);
+		}
+
+		@mixin atLarge {
+			display: inline-block;
+			width: 4.6875rem;
+			transform:translateY(.625rem);
+		}
+
+	}
+
+}

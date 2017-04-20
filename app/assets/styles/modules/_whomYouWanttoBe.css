@@ -1,0 +1,14 @@
+.whomYouWanttoBe {
+
+	text-align: center;
+
+	&__img {
+		max-width: 16rem;
+	
+		@mixin atSmall {
+			max-width: 29.9024375rem;	
+		}
+
+	}
+	
+}

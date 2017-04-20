@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexhei.css);
+
+body {
+    background-color: $mainWhite;
+    color: #050500;
+    font-family: 'cwTeXHei', 'Microsoft YaHei', 'LiHei Pro', 'Noto Sans TC', sans-serif ;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: $mainBlue;
+}
+
+.text-center {
+	text-align: center;
+}
+.hidden-xs {
+	display: none;
+
+	@mixin atSmall {
+		display: block;
+	}
+}
+.hidden-md {
+	display: none;
+
+	@mixin atMedium {
+		display: block;
+	}
+}
+.hidden-xs-l {
+	@mixin fromXStoL {
+		display: none;
+	}
+}
+
+.visible-xs {
+	display: block;
+
+	@mixin atSmall {
+		display: none;
+	}
+}
+
+.visible-sm {
+	display: block;
+
+	@mixin atMedium {
+		display: none;
+	}
+}
+
+.visible-xs-l {
+	display: none;
+
+	@mixin fromXStoL {
+		display: block;
+	}
+}
+
+.white {
+	color: $mainWhite;
+}
+
+.no-t-margin {
+	margin-top: 0;
+}
+
+.clearfix {
+	@mixin clearfix;
+}
+.line {
+	border-bottom: 1px solid #1e1e1e;
+	width: 100%;
+}

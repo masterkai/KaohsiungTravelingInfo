@@ -1,0 +1,19 @@
+.icon {
+	display: block;
+	margin: 0 auto;
+	transform: scale(.5);
+	transform-origin: 25% 100%;
+
+
+	@mixin atSmall {
+		transform: scale(.65);
+	}
+
+	@mixin atMedium {
+		transform: scale(.8);
+	}
+
+	@mixin atLarge {
+		transform: scale(1);
+	}
+}

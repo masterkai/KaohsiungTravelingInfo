@@ -1,0 +1,136 @@
+/* Do not edit modules/_sprite directly as it is generated automatically by Gulp.
+Instead edit gulp/templates/sprite */
+
+.icon-add {
+    background-image: url('../../assets/images/sprites/sprite-3f0ca85e.svg');
+}
+
+.no-svg .icon-add {
+    background-image: url('../../assets/images/sprites/sprite-3f0ca85e.png');
+}
+
+.icon--3DArmorModeling {
+width: 114px;
+height: 114px;
+background-position: 0 81.73566878980891%;
+}
+
+.icon--3DCharacters {
+width: 114px;
+height: 114px;
+background-position: 28.428927680798004% 99.88853503184713%;
+}
+
+.icon--3DMonsterModeling {
+width: 114px;
+height: 114px;
+background-position: 14.214463840399002% 81.73566878980891%;
+}
+
+.icon--VR360Camera {
+width: 114px;
+height: 114px;
+background-position: 28.428927680798004% 81.73566878980891%;
+}
+
+.icon--VRGameDevelopment {
+width: 114px;
+height: 114px;
+background-position: 42.64339152119701% 81.73566878980891%;
+}
+
+.icon--VRGameEngine {
+width: 114px;
+height: 114px;
+background-position: 56.85785536159601% 81.73566878980891%;
+}
+
+.icon--VRGameInterface {
+width: 114px;
+height: 114px;
+background-position: 71.07231920199501% 81.73566878980891%;
+}
+
+.icon--bgCreation {
+width: 114px;
+height: 114px;
+background-position: 85.28678304239402% 81.73566878980891%;
+}
+
+.icon--characterDesign {
+width: 114px;
+height: 114px;
+background-position: 0 99.88853503184713%;
+}
+
+.icon--crossPlatFormApp {
+width: 114px;
+height: 114px;
+background-position: 14.214463840399002% 99.88853503184713%;
+}
+
+.icon--features-1 {
+width: 802px;
+height: 513.3px;
+background-position: 0 0;
+}
+
+.icon--gameDevelopment {
+width: 114px;
+height: 114px;
+background-position: 42.64339152119701% 99.88853503184713%;
+}
+
+.icon--gameEnvironmentDevelopment {
+width: 114px;
+height: 114px;
+background-position: 56.85785536159601% 99.88853503184713%;
+}
+
+.icon--gameFX {
+width: 114px;
+height: 114px;
+background-position: 71.07231920199501% 99.88853503184713%;
+}
+
+.icon--gameObjectOutput {
+width: 114px;
+height: 114px;
+background-position: 85.28678304239402% 99.88853503184713%;
+}
+
+.icon--gameSettingDesign {
+width: 114px;
+height: 114px;
+background-position: 100% 0;
+}
+
+.icon--marketingAnalysis {
+width: 114px;
+height: 114px;
+background-position: 100% 18.15286624203822%;
+}
+
+.icon--multiDrawingStyle {
+width: 114px;
+height: 114px;
+background-position: 100% 36.30573248407644%;
+}
+
+.icon--productionWorkflow {
+width: 114px;
+height: 114px;
+background-position: 100% 54.45859872611465%;
+}
+
+.icon--profit {
+width: 114px;
+height: 114px;
+background-position: 100% 72.61146496815287%;
+}
+
+.icon--spaceRatio {
+width: 114px;
+height: 114px;
+background-position: 100% 90.76433121019109%;
+}

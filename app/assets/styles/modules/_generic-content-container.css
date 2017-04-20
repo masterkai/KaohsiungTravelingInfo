@@ -1,0 +1,35 @@
+.generic-content-container {
+
+    &--gray {
+        max-width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+        color: $lightGray;
+
+        @mixin atSmall {
+            max-width: 800px;
+            font-size:1.125rem;
+            font-weight:100;
+        }
+
+    }
+
+    p {
+        line-height:2;
+        font-size: .75rem;
+        margin:1.8rem 0;
+        font-weight:100;
+        
+
+		
+        @mixin atSmall {
+        	font-size:1.125rem;
+            font-weight:100;
+        }
+    }
+
+    p a {
+    	font-weight: 700;
+    }
+
+}

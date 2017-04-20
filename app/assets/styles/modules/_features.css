@@ -1,0 +1,65 @@
+.features {
+
+	position: relative;
+
+	&--game-planning {
+		background-image: url(../../assets/images/GamePlanningBg.png);
+		background-repeat:repeat;
+    	background-position:50% 50%;
+		background-size: cover;
+	}
+
+	&--2DGameArt {
+		background-image: url(../../assets/images/49189628_L.png);
+		background-repeat:repeat;
+    	background-position:50% 50%;
+
+		@mixin atSmall {
+			background-image: url(../../assets/images/2DGameArtBg.png);
+		}
+
+	}
+
+	&--3DGameArt {
+		background-image: url(../../assets/images/3DGameArtBg-small.png);
+		background-repeat:repeat;
+    	background-position:50% 50%;
+    	background-size: cover;
+
+    	@mixin atSmall {
+			background-image: url(../../assets/images/3DGameArtBg.png);
+			background-size: cover;
+		}
+	}
+
+	&--crossPlatformDevelopment {
+		background-image: url(../../assets/images/crossPlatformBg.png);
+		background-repeat:repeat;
+    	background-position:50% 50%;
+	}
+
+	&__img1 {
+		width: 10rem;
+		display: block;
+		bottom: 0;
+
+		@mixin atSmall {
+			width: 33.111rem;
+		}
+	}
+
+	&__description {
+		background-color: $mainWhite;
+		border-radius: 5px;
+
+	}
+
+	&__description--no-t-padding {
+			margin-top: 0px;
+			font-size: .75rem;
+			padding: 0 20px 0 20px;
+
+		}
+
+
+}

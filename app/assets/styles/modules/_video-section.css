@@ -1,0 +1,88 @@
+.video-section {
+	&__pattern-overlay {
+		background-color: rgba(70, 70, 70, 0.39);
+		background-image: url(../../assets/images/KV-BG--small.jpg);
+		@mixin atSmall {
+			background-image: url(../../assets/images/overlay6x6.png);
+		}
+	}
+	&__flex-container {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+		align-content: stretch;
+	}
+	&__flex-item {
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: auto;
+	}
+	h1 {
+		margin: 0;
+		text-align: center;
+		padding-left: 1rem;
+		color: #fff;
+		font-size: 3rem;
+		font-weight: 300;
+		letter-spacing: 1rem;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 1px #000;
+		@mixin atSmall {
+			font-size: 5rem;
+			letter-spacing: 3rem;
+			padding-left: 3rem;
+		}
+	}
+	h3 {
+		text-align: center;
+		color: #fff;
+		font-size: 1.5vw;
+		font-weight: lighter;
+		margin: 0px auto 15px;
+	}
+	&__player {
+		font-size: 1px;
+	}
+	text-align: center;
+	&__img {
+		max-width: 18rem;
+		@mixin atSmall {
+			max-width: 40rem;
+		}
+	}
+	&__btn {
+		margin: 0;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		padding: 12px 30px;
+		font-size: 2rem;
+		font-kerning: normal;
+		color: rgba(255, 255, 255, 1);
+		background-color: rgba(255, 255, 255, 0);
+		cursor: pointer;
+		text-transform: uppercase;
+		text-align: center;
+		display: inline-block;
+		-webkit-transition: 0.2s background linear;
+		-moz-transition: 0.2s background linear;
+		transition: 0.35s all linear;
+		text-decoration: none !important;
+		@mixin atSmall {
+			font-size: 2.5rem;
+		}
+		&:hover {
+			border: 1px solid rgba(255, 255, 255, 1);
+			color: rgba(255, 255, 255, 1);
+			background-color: rgba(255, 255, 255, 0.1);
+		}
+	}
+}
+
+.buttonBar {
+	display: none;
+}
+
+.ut_word_rotator {
+	color: inherit;
+}
