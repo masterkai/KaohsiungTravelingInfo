@@ -16,3 +16,6 @@
 @import "modules/_icon";
 @import "modules/_sprite";
 @import "modules/_video-section";
+@import "modules/_filteredInfo";
+@import "modules/_card";
+@import "modules/_footer";

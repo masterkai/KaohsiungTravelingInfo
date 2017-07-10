@@ -1,13 +1,110 @@
-.large-hero {
+.heroSec {
     position: relative;
-    &__image {
-    display: block;
+    margin-bottom: 5%;
+    .large-hero {
+        background-image: url('../../assets/images/Hero.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        width: 100%;
+        height: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        &__flexContainer {
+            position: absolute;
+             width: 100%;
+             padding: 0 15px;
+            top: 10%;
+            left: 50%;
+            height: 100%;
+            transform: translateX(-50%);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: center;
+            @mixin atLarge {
+                width: 60%;
+            }
+            h1 {
+                font-size: 1.8rem;
+                color: $mainWhite;
+                letter-spacing: .3rem;
+                @mixin atSmall {
+                    font-size: 2.5rem;
+                    letter-spacing: .6rem;
+                }
+            }
+            .selectArea {
+                flex-grow: 0;
+                flex-shrink: 1;
+                flex-basis: auto;
+                width: 100%;
+                height: 48px;
+                background-color: rgba(255, 255, 255, 0.7);
+                border: 2px solid #fff;
+                @mixin atSmall {
+                    width: 452px;
+                }
+            }
+        }
+        &__popAdministrativeDistrict {
+            width: 100%;
+             height: auto;
+            background-color: $mainWhite;
+            border-radius: 5px;
+            box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+            text-align: left;
+             padding: 5px 30px;
+            h3 {
+                font-size: 1.125rem;
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+        }
+        &__pop4 {
+            display: flex;
+            flex-wrap: wrap;
+             justify-content: space-around;
+            align-items: center;
+            @mixin atSmall {
+                flex-wrap: nowrap;
+            }
+            &__btn {
+                color: $mainWhite;
+                padding: 10px;
+                margin: 10px;
+                font-size: 1.25rem;
+                border-radius: 5px;
+                outline-style: none;
+                border:0;
+                 flex: 1 1 25%;
+                &--a {
+                    background-color: $lightPurple;
+                    &:hover {
+                        background-color: lighten($lightPurple, 20%);
+                    }
+                }
+                &--b {
+                    background-color: $lightOrange;
+                    &:hover {
+                        background-color: lighten($lightOrange, 20%);
+                    }
+                }
+                &--c {
+                    background-color: $happyYellow;
+                    &:hover {
+                        background-color: lighten($happyYellow, 20%);
+                    }
+                }
+                &--d {
+                    background-color: $grayBlue;
+                    &:hover {
+                        background-color: lighten($grayBlue, 20%);
+                    }
+                }
+            }
+        }
     }
-     &__main-KV {
-          position: absolute;
-          z-index: 1;
-          bottom:0;
-          left:0;
-      }
 }
-

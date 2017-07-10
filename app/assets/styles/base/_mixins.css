@@ -17,6 +17,12 @@
     }
 }
 
+@define-mixin atMedium-down {
+    @media (max-width: 800px) {
+        @mixin-content;
+    }
+}
+
 @define-mixin fromMtoL {
     @media screen and (min-width: 800px) and (max-width: 1010px) {
         @mixin-content;

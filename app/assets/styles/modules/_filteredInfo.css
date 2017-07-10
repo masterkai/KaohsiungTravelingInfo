@@ -1,0 +1,28 @@
+.filteredInfo {
+    position: relative;
+    .fa {
+        position: absolute;
+        top: 0;
+        transform: translate(-14px, -12px);
+        color: $grayBlue;
+        padding: 5px 8px;
+        border: 1px solid $grayBlue;
+        border-radius: 60px;
+        background-color: $mainWhite;
+    }
+    .listTitle {
+        margin-top: 76px;
+        color: #8A82CC;
+        font-size: 36px;
+    }
+    .list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content:center;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        padding: 1.5%;
+        box-sizing: border-box;
+    }
+}

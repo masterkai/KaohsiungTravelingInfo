@@ -1,0 +1,22 @@
+.footer {
+    background-color:lighten($grayBlue, 20%);
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    p {
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        margin: 10px 0 0 0;
+        font-size: 0.875rem;
+        &:nth-child(1){
+            color: $mainWhite;
+        }
+        &:nth-child(2){
+            color: #FFD366;
+        }
+    }
+}

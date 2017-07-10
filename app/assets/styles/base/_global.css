@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexhei.css);
 
 body {
-    background-color: $mainWhite;
+    /*background-color: #1e1e1e;*/
     color: #050500;
     font-family: 'cwTeXHei', 'Microsoft YaHei', 'LiHei Pro', 'Noto Sans TC', sans-serif ;
 }
@@ -17,6 +17,24 @@ img {
 
 a {
     color: $mainBlue;
+}
+
+.page {
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    background-color: $mainWhite;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed $grayBlue;
+    color: $mainWhite;
+    height: 1px;
+    width: 100%;
+	@mixin atLarge {
+		width: 900px;
+	}
 }
 
 .text-center {

@@ -5,11 +5,14 @@ var gulp = require('gulp'),
     nested = require('postcss-nested'),
     cssImport = require('postcss-import'),
     mixins = require('postcss-mixins'),
-    opacity = require('postcss-opacity');
+    opacity = require('postcss-opacity'),
+    colorFunc = require('postcss-color-function'),
+    colourFuncs = require('postcss-colour-functions'),
+    breakpoints = require('postcss-breakpoints');
 
 gulp.task('styles', function () {
     return gulp.src('./app/assets/styles/styles.css')
-        .pipe(postcss([cssImport, mixins, cssvars, opacity, nested, autoprefixer]))
+        .pipe(postcss([cssImport, mixins, cssvars, opacity, nested, colorFunc, colourFuncs, autoprefixer, breakpoints]))
         .on('error', function (errorInfo) {
             console.log(errorInfo.toString());
             this.emit('end');

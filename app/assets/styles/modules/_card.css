@@ -1,0 +1,126 @@
+.travelCard {
+    @mixin atMedium-down {
+        width: 100%;
+    }
+    position: relative;
+    margin-bottom: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+    @mixin atMedium {
+        width: 464px;
+        margin-right: 16px;
+        margin-left: 16px;
+        margin-bottom: 36px;
+    }
+    &__content {
+        list-style: none;
+        padding: 5% 5% 3% 5%;
+        text-align: left;
+        .clock {
+            position: relative;
+            padding-left: 20px;
+            &::before {
+                font-family: FontAwesome;
+                content: '\f017';
+                display: inline-block;
+                position: absolute;
+                left: -2px;
+                color: #8A82CC ;
+            }
+        }
+        .pin {
+            position: relative;
+            padding-left: 20px;
+            &::before {
+                font-family: FontAwesome;
+                content: '\f041';
+                display: inline-block;
+                position: absolute;
+                left: 0em;
+                color: #ffa836;
+            }
+        }
+        .phone {
+            position: relative;
+            padding-left: 20px;
+            &::before {
+                font-family: FontAwesome;
+                content: '\f10b';
+                display: inline-block;
+                position: absolute;
+                left: 1px;
+                color: #58aeff;
+            }
+        }
+        li {
+            margin-bottom: 16px;
+        }
+    }
+    .tag {
+        position: absolute;
+        padding-left: 20px;
+        bottom: 30px;
+        right: 20px;
+        &::before {
+            font-family: FontAwesome;
+            content: '\f02b';
+            display: inline-block;
+            position: absolute;
+            left: 1px;
+            color: #ffe415;
+        }
+    }
+    span {
+        display: block;
+    }
+    &__header {
+        position: relative;
+        height: 155px;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: overlay;
+        background-color: rgba(white, .5);
+        border-radius: 4px 4px 0 0;
+        &:hover,
+        &:focus {
+            background-color: rgba(white, 1);
+        }
+    }
+    &__title {
+        position: absolute;
+        padding: 3.5% 0 0.15% 0;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        h3 {
+            font-size: 1.2rem;
+            line-height: 1.2;
+            padding: 0 3.5%;
+            margin: 0 0 14px 0;
+            text-align: left;
+            text-shadow: 0 0 4px #333333;
+        }
+    }
+    &__secTitle {
+        position: absolute;
+        padding: 3.5% 0 0.15% 0;
+        bottom: 0;
+        width: 100%;
+        color: white;
+        h3 {
+            font-size: 1rem;
+            line-height: 1.2;
+            padding: 0 3.5%;
+            margin: 0 0 14px 0;
+            text-align: right;
+            text-shadow: 0 0 4px #333333;
+
+        }
+    }
+}
