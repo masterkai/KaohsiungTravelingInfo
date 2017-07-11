@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kaohsiung Traveling Info</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- build:css assets/styles/styles.css -->
     <link rel="stylesheet" href="temp/styles/styles.css">
     <!-- endbuild -->
@@ -30,7 +31,7 @@
                             class="large-hero__pop4__btn large-hero__pop4__btn--b">
                     <input type="button" value="新興區"
                             class="large-hero__pop4__btn large-hero__pop4__btn--c">
-                    <input type="button" value="六龜區"
+                    <input type="button" value="鹽埕區"
                             class="large-hero__pop4__btn large-hero__pop4__btn--d">
                 </div>
             </div>
@@ -63,14 +64,31 @@
                 <div class="tag">免費參觀</div>
                 </li>-->
             </ul>
-        </div>
+            <div class="row__medium-12 data-page text-center"
+                 id="render-page" style="display: none">
+                 <a href="#" data-page="prev">
+                    < prev</a> &nbsp;
+                        <a href="#" data-page="1">1</a>
+                        <a href="#" data-page="2">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a> &nbsp;
+                        <a href="#" data-page="next">next ></a>
+            </div>
+        </div> <!-- end of row -->
     </section>
 
     <section class="footer text-center">
         <p>高雄旅遊網</p>
         <p>資料來源：高雄市政府</p>
     </section>
-    <!--</div>-->
+
+    <!-- gototp -->
+    <div class="gototp" style="display: none">
+        <a href="#">
+            <img src="assets/images/btn_goTop.png"
+                 class="gototp-img">
+        </a>
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

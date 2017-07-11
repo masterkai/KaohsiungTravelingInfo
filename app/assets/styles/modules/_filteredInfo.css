@@ -1,5 +1,6 @@
 .filteredInfo {
     position: relative;
+    margin-bottom: 2.5%;
     .fa {
         position: absolute;
         top: 0;
@@ -24,5 +25,11 @@
         margin-top: 15px;
         padding: 1.5%;
         box-sizing: border-box;
+    }
+    .data-page {
+        a:hover{
+            text-decoration: none;
+            opacity: .35;
+        }
     }
 }

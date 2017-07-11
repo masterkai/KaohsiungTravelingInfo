@@ -1,4 +1,7 @@
 .travelCard {
+    a.forAnimation {
+        transition: all .2s ease-in-out;
+    }
     @mixin atMedium-down {
         width: 100%;
     }
@@ -19,6 +22,8 @@
         list-style: none;
         padding: 5% 5% 3% 5%;
         text-align: left;
+        color: #828282;
+        transition: all .2s ease-in-out;
         .clock {
             position: relative;
             padding-left: 20px;

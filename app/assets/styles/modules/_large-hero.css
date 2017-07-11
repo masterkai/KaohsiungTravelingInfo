@@ -37,6 +37,7 @@
                 }
             }
             .selectArea {
+                appearance: none;
                 flex-grow: 0;
                 flex-shrink: 1;
                 flex-basis: auto;
@@ -44,6 +45,12 @@
                 height: 48px;
                 background-color: rgba(255, 255, 255, 0.7);
                 border: 2px solid #fff;
+                background-image:url('../../assets/images/icons_down.png');
+                background-repeat: no-repeat;
+                background-position: 98% 50%;
+                display: block;
+                outline-style:none;
+                padding-left: 10px;
                 @mixin atSmall {
                     width: 452px;
                 }
@@ -85,11 +92,17 @@
                     &:hover {
                         background-color: lighten($lightPurple, 20%);
                     }
+                     &:active {
+                        background-color: darken($lightPurple, 20%);
+                    }
                 }
                 &--b {
                     background-color: $lightOrange;
                     &:hover {
                         background-color: lighten($lightOrange, 20%);
+                    }
+                     &:active {
+                        background-color: darken($lightOrange, 20%);
                     }
                 }
                 &--c {
@@ -97,14 +110,25 @@
                     &:hover {
                         background-color: lighten($happyYellow, 20%);
                     }
+                     &:active {
+                        background-color: darken($happyYellow, 20%);
+                    }
                 }
                 &--d {
                     background-color: $grayBlue;
                     &:hover {
                         background-color: lighten($grayBlue, 20%);
                     }
+                     &:active {
+                        background-color: darken($grayBlue, 20%);
+                    }
                 }
             }
         }
     }
+}
+.gototp {
+    position: fixed;
+    right: 2%;
+    bottom: 100px;
 }
