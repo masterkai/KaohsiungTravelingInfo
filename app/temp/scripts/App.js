@@ -231,13 +231,11 @@
 
 	    var strHtml = '';
 	    for (var i = startItem; i < endItem; i++) {
-	        var tempHtml = '<div class="col-xs-12 col-sm-6"><a href="{{Website}}" class="thumbnail animated fadeIn" target="_blank"><div class="caption clip" style="background-image: url({{Picture1}})"><div class="content-img-title"><h3>{{Name}}</h3><span>{{Zone}}</span><div class="clearfix"></div></div></div><div class="caption content-info"><span class="content-info-1">{{Opentime}}</span><span class="content-info-2">{{Add}}</span><span class="content-info-3">{{Tel}}</span><span class="content-info-4">{{Ticketinfo}}</span><div class="clearfix"></div></div></a></div>';
+	        var tempHtml = '<li class="travelCard animated fadeIn"><a href="' + data[i].Website + '" target="_blank">\n                        <span class="travelCard__header" style="background-image: url(' + data[i].Picture1 + ')">\n                            <span class="travelCard__title">\n                                <h3>' + data[i].Name + '</h3>\n                            </span>\n                <span class="travelCard__secTitle">\n                                <h3>' + data[i].Zone + '</h3>\n                            </span>\n                </span>\n                <ul class="travelCard__content">\n                    <li class="clock">' + data[i].Opentime + '</li>\n                    <li class="pin">' + data[i].Add + '</li>\n                    <li class="phone">' + data[i].Tel + '</li>\n                </ul>\n                <div class="tag">' + data[i].Ticketinfo + '</div>\n                </a>\n                </li>';
 	        if (data[i].Ticketinfo == '') {
 	            // 沒有資料的時候給空白讓他偏移
 	            data[i].Ticketinfo = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 	        }
-	        tempHtml = tempHtml.replace('{{Name}}', data[i].Name).replace('{{Picture1}}', data[i].Picture1).replace('{{Ticketinfo}}', data[i].Ticketinfo).replace('{{Zone}}', data[i].Zone).replace('{{Opentime}}', data[i].Opentime).replace('{{Add}}', data[i].Add).replace('{{Tel}}', data[i].Tel).replace('{{Website}}', data[i].Website == '' ? '#' : data[i].Website);
-
 	        strHtml += tempHtml;
 	    }
 
@@ -282,7 +280,7 @@
 	        // 重串url條件
 	        var newurl = url + '&q=' + objValue;
 	        // callAjax(newurl, 1);
-	        console.log(newurl);
+	        // console.log(newurl);
 	        queryArea(objValue);
 	        // callAjax(newurl, 2);
 	        renderContent(1);
@@ -292,11 +290,12 @@
 	// 熱門區按鈕做偵聽
 	popularList.addEventListener('click', function (e) {
 	    e.preventDefault();
-	    // 是點選到a標籤
+	    // 是點選到INPUT標籤
 	    if (e.target.nodeName == 'INPUT') {
 	        // 重串url條件
-	        var newurl = url + '&q=' + e.target.textContent;
-	        queryArea(e.target.textContent);
+	        var newurl = url + '&q=' + e.target.value;
+	        console.log(newurl);
+	        queryArea(e.target.value);
 	        // callAjax(newurl, 2);
 	        renderContent(1);
 	    }
@@ -314,6 +313,36 @@
 	        }
 	    }
 	}
+
+	// 頁次偵聽
+	renderPage.addEventListener('click', function (e) {
+	    e.preventDefault();
+	    if (e.target.nodeName == 'INPUT') {
+	        // 要前往哪一頁
+	        var goPage;
+	        var pervNext = Number(e.target.dataset.num);
+	        // 當有按下下一頁或上頁
+	        if (pervNext == -1 || pervNext == 1) {
+	            if (pervNext == -1) {
+	                if (currentPage + pervNext < 1) {
+	                    return false;
+	                }
+	                goPage = currentPage - 1;
+	            } else if (pervNext == 1) {
+	                if (currentPage + pervNext > totoalPage) {
+	                    return false;
+	                }
+	                goPage = currentPage + 1;
+	            }
+	        } else {
+	            goPage = Number(e.target.dataset.page);
+	            if (currentPage == goPage) {
+	                return false;
+	            }
+	        }
+	        renderContent(goPage);
+	    }
+	});
 
 /***/ }
 /******/ ]);
