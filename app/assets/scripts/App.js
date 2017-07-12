@@ -99,10 +99,10 @@ function callAjax(url, status) {
                     renderOption(optionData);
                 }
                 // 渲染內容
-                // 當不是第一次載入時不做renderContent = 沒有查詢
+                // 當不是第一次載入時不做createContent = 沒有查詢
                 if (status != 0) {
                     // 有觸發到下拉選單或熱門區都是第一頁開始
-                    renderContent(1);
+                    createContent(1);
                 }
 
             } else {
@@ -143,7 +143,7 @@ var currentPage, totoalPage, totalItem;
 var perPage = 10;
 
 // 渲染內容(第一次call api跟換頁功能共用方法 )
-function renderContent(goPage){
+function createContent(goPage){
     document.querySelector('.footer').style.display = '';
 
     totalItem = data.length;
@@ -202,10 +202,10 @@ function renderContent(goPage){
                 <div class="tag">${data[i].Ticketinfo}</div>
                 </a>
                 </li>`;
-        if (data[i].Ticketinfo == '') {
+        /*if (data[i].Ticketinfo == '') {
             // 沒有資料的時候給空白讓他偏移
             data[i].Ticketinfo = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
-        }
+        }*/
         strHtml += tempHtml;
     }
 
@@ -215,11 +215,11 @@ function renderContent(goPage){
     currentPage = goPage;
 
     // 渲染頁碼
-    renderPage(totoalPage);
+    createPage(totoalPage);
 }
 
 
-function renderPage() {
+function createPage() {
 
     if (data.length <= 0) {
         // 沒有資料的時候不顯示筆數
@@ -254,7 +254,7 @@ selectAreaObj.addEventListener('change', function(e) {
         // console.log(newurl);
         queryArea(objValue);
         // callAjax(newurl, 2);
-        renderContent(1);
+        createContent(1);
     }
 });
 
@@ -268,7 +268,7 @@ popularList.addEventListener('click', function(e) {
         console.log(newurl);
         queryArea(e.target.value);
         // callAjax(newurl, 2);
-        renderContent(1);
+        createContent(1);
     }
 });
 
@@ -289,10 +289,11 @@ function queryArea(areaName) {
 // 頁次偵聽
 renderPage.addEventListener('click', function(e) {
     e.preventDefault();
-    if (e.target.nodeName == 'INPUT') {
+    if (e.target.nodeName == 'A') {
         // 要前往哪一頁
         var goPage;
         var pervNext = Number(e.target.dataset.num);
+        console.log('pervNext: '+pervNext);
         // 當有按下下一頁或上頁
         if (pervNext == -1 || pervNext == 1) {
             if (pervNext == -1) {
@@ -312,6 +313,6 @@ renderPage.addEventListener('click', function(e) {
                 return false;
             }
         }
-        renderContent(goPage);
+        createContent(goPage);
     }
 });

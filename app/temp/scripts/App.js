@@ -147,10 +147,10 @@
 	                    renderOption(optionData);
 	                }
 	                // 渲染內容
-	                // 當不是第一次載入時不做renderContent = 沒有查詢
+	                // 當不是第一次載入時不做createContent = 沒有查詢
 	                if (status != 0) {
 	                    // 有觸發到下拉選單或熱門區都是第一頁開始
-	                    renderContent(1);
+	                    createContent(1);
 	                }
 	            } else {
 	                alert('There was a problem with the request.');
@@ -189,7 +189,7 @@
 	var perPage = 10;
 
 	// 渲染內容(第一次call api跟換頁功能共用方法 )
-	function renderContent(goPage) {
+	function createContent(goPage) {
 	    document.querySelector('.footer').style.display = '';
 
 	    totalItem = data.length;
@@ -232,10 +232,10 @@
 	    var strHtml = '';
 	    for (var i = startItem; i < endItem; i++) {
 	        var tempHtml = '<li class="travelCard animated fadeIn"><a href="' + data[i].Website + '" target="_blank">\n                        <span class="travelCard__header" style="background-image: url(' + data[i].Picture1 + ')">\n                            <span class="travelCard__title">\n                                <h3>' + data[i].Name + '</h3>\n                            </span>\n                <span class="travelCard__secTitle">\n                                <h3>' + data[i].Zone + '</h3>\n                            </span>\n                </span>\n                <ul class="travelCard__content">\n                    <li class="clock">' + data[i].Opentime + '</li>\n                    <li class="pin">' + data[i].Add + '</li>\n                    <li class="phone">' + data[i].Tel + '</li>\n                </ul>\n                <div class="tag">' + data[i].Ticketinfo + '</div>\n                </a>\n                </li>';
-	        if (data[i].Ticketinfo == '') {
+	        /*if (data[i].Ticketinfo == '') {
 	            // 沒有資料的時候給空白讓他偏移
-	            data[i].Ticketinfo = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-	        }
+	            data[i].Ticketinfo = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+	        }*/
 	        strHtml += tempHtml;
 	    }
 
@@ -245,10 +245,10 @@
 	    currentPage = goPage;
 
 	    // 渲染頁碼
-	    renderPage(totoalPage);
+	    createPage(totoalPage);
 	}
 
-	function renderPage() {
+	function createPage() {
 
 	    if (data.length <= 0) {
 	        // 沒有資料的時候不顯示筆數
@@ -283,7 +283,7 @@
 	        // console.log(newurl);
 	        queryArea(objValue);
 	        // callAjax(newurl, 2);
-	        renderContent(1);
+	        createContent(1);
 	    }
 	});
 
@@ -297,7 +297,7 @@
 	        console.log(newurl);
 	        queryArea(e.target.value);
 	        // callAjax(newurl, 2);
-	        renderContent(1);
+	        createContent(1);
 	    }
 	});
 
@@ -317,10 +317,11 @@
 	// 頁次偵聽
 	renderPage.addEventListener('click', function (e) {
 	    e.preventDefault();
-	    if (e.target.nodeName == 'INPUT') {
+	    if (e.target.nodeName == 'A') {
 	        // 要前往哪一頁
 	        var goPage;
 	        var pervNext = Number(e.target.dataset.num);
+	        console.log('pervNext: ' + pervNext);
 	        // 當有按下下一頁或上頁
 	        if (pervNext == -1 || pervNext == 1) {
 	            if (pervNext == -1) {
@@ -340,7 +341,7 @@
 	                return false;
 	            }
 	        }
-	        renderContent(goPage);
+	        createContent(goPage);
 	    }
 	});
 
