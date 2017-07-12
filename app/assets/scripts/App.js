@@ -1,7 +1,7 @@
 // 當有滾動的時候
 window.onscroll = function () {
     // 移動的距離
-    var scPos = window.pageYOffset;
+    let scPos = window.pageYOffset;
     if (scPos > (window.innerHeight) / 5) {
         document.querySelector('.gototp').style.display = '';
     } else {
@@ -17,14 +17,14 @@ document.querySelector('.gototp').addEventListener('click', function (e) {
 // 純js scrollTop
 // 參考：https://gist.github.com/andjosh/6764939
 function scrollTo(element, to, duration) {
-    var start = element.scrollTop,
+    let start = element.scrollTop,
         change = to - start,
         currentTime = 0,
         increment = 20;
 
-    var animateScroll = function () {
+    let animateScroll = function () {
         currentTime += increment;
-        var val = Math.easeInOutQuad(currentTime, start, change, duration);
+        let val = Math.easeInOutQuad(currentTime, start, change, duration);
         element.scrollTop = val;
         if (currentTime < duration) {
             setTimeout(animateScroll, increment);
@@ -44,7 +44,8 @@ Math.easeInOutQuad = function (t, b, c, d) {
     return -c / 2 * (t * (t - 2) - 1) + b;
 };
 
-let url ='https://hotman0901.github.io/travel/json/datastore_search.json';
+// let url ='https://hotman0901.github.io/travel/json/datastore_search.json';
+let url = 'http://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97';
 let myObj = '';
 let data = [];
 let selectItem = [];
@@ -59,7 +60,7 @@ let optionData;
 callAjax(url, 0);
 // status 0=初始畫面觸發，1=從下拉選單觸發，2=從熱門區觸發
 function callAjax(url, status) {
-    var xhr;
+    let xhr;
 
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
         xhr = new XMLHttpRequest();
@@ -88,7 +89,7 @@ function callAjax(url, status) {
     xhr.onload = function() {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-                var content = JSON.parse(xhr.responseText);
+                let content = JSON.parse(xhr.responseText);
                 // 資料是放在 result.records
                 optionData = content.result.records;
                 // console.log(content);
@@ -130,17 +131,17 @@ function renderOption(option) {
         // console.log(selectItem[i]);
         // console.log(typeof(selectAreaObj));
         // 新增option作法如下
-        let varItem = new Option(selectItem[i], selectItem[i]);
-        // console.log(varItem);
-        selectAreaObj.options.add(varItem);
+        let letItem = new Option(selectItem[i], selectItem[i]);
+        // console.log(letItem);
+        selectAreaObj.options.add(letItem);
         // console.log(typeof(selectAreaObj.options));
     }
 }
 
 // 目前頁數、總頁數、要前往的頁數、總共幾筆
-var currentPage, totoalPage, totalItem;
+let currentPage, totoalPage, totalItem;
 // 一頁10筆資料
-var perPage = 10;
+let perPage = 10;
 
 // 渲染內容(第一次call api跟換頁功能共用方法 )
 function createContent(goPage){
@@ -164,11 +165,11 @@ function createContent(goPage){
 
 
     // 起始資料index,結束資料index
-    var startItem;
-    var endItem;
+    let startItem;
+    let endItem;
     // 如果是最後一頁要判斷抓取幾筆資料， 其餘都一定是10筆
     if (goPage == totoalPage) {
-        var minusItem = totalItem - (totoalPage * perPage);
+        let minusItem = totalItem - (totoalPage * perPage);
 
         if (minusItem == 0) { //判斷最後一頁是幾筆用 = 0 就是10筆
             startItem = ((totoalPage - 1) * perPage);
@@ -183,9 +184,9 @@ function createContent(goPage){
 
     }
 
-    var strHtml = '';
-    for (var i = startItem; i < endItem; i++) {
-        var tempHtml = `<li class="travelCard animated fadeIn"><a href="${data[i].Website}" target="_blank">
+    let strHtml = '';
+    for (let i = startItem; i < endItem; i++) {
+        let tempHtml = `<li class="travelCard animated fadeIn"><a href="${data[i].Website}" target="_blank">
                         <span class="travelCard__header" style="background-image: url(${data[i].Picture1})">
                             <span class="travelCard__title">
                                 <h3>${data[i].Name}</h3>
@@ -228,12 +229,12 @@ function createPage() {
         renderPage.style.display = '';
 
         // 模板
-        var prevPage = '<a href="#" data-num="-1">< prev</a> &nbsp;';
-        var nexPage = ' &nbsp;<a href="#" data-num="1">next ></a>';
+        let prevPage = '<a href="#" data-num="-1">< prev</a> &nbsp;';
+        let nexPage = ' &nbsp;<a href="#" data-num="1">next ></a>';
         if (totoalPage > 0) {
-            var nbrHtml = '';
-            for (var i = 0; i < totoalPage; i++) {
-                var tempNbr = '<a href="#" data-page="' + (i + 1) + '">' + (i + 1) + '</a> ';
+            let nbrHtml = '';
+            for (let i = 0; i < totoalPage; i++) {
+                let tempNbr = '<a href="#" data-page="' + (i + 1) + '">' + (i + 1) + '</a> ';
                 nbrHtml += tempNbr;
             }
 
@@ -245,11 +246,11 @@ function createPage() {
 // 當下拉選單異動的時候就重新select資料
 // 觸發下拉都是從第一頁開始
 selectAreaObj.addEventListener('change', function(e) {
-    var objValue = e.target.value;
+    let objValue = e.target.value;
     // 不是選到請選擇在去做執行
     if (objValue != "") {
         // 重串url條件
-        var newurl = url + '&q=' + objValue;
+        let newurl = url + '&q=' + objValue;
         // callAjax(newurl, 1);
         // console.log(newurl);
         queryArea(objValue);
@@ -264,7 +265,7 @@ popularList.addEventListener('click', function(e) {
     // 是點選到INPUT標籤
     if (e.target.nodeName == 'INPUT') {
         // 重串url條件
-        var newurl = url + '&q=' + e.target.value;
+        let newurl = url + '&q=' + e.target.value;
         console.log(newurl);
         queryArea(e.target.value);
         // callAjax(newurl, 2);
@@ -278,7 +279,7 @@ function queryArea(areaName) {
     // 清空
     data = [];
     // queryData
-    for (var i = 0; i < optionData.length; i++) {
+    for (let i = 0; i < optionData.length; i++) {
         // console.log(data[i].Zone);
         if (optionData[i].Zone == areaName) {
             data.push(optionData[i]);
@@ -291,8 +292,8 @@ renderPage.addEventListener('click', function(e) {
     e.preventDefault();
     if (e.target.nodeName == 'A') {
         // 要前往哪一頁
-        var goPage;
-        var pervNext = Number(e.target.dataset.num);
+        let goPage;
+        let pervNext = Number(e.target.dataset.num);
         console.log('pervNext: '+pervNext);
         // 當有按下下一頁或上頁
         if (pervNext == -1 || pervNext == 1) {

@@ -91,7 +91,8 @@
 	    return -c / 2 * (t * (t - 2) - 1) + b;
 	};
 
-	var url = 'https://hotman0901.github.io/travel/json/datastore_search.json';
+	// let url ='https://hotman0901.github.io/travel/json/datastore_search.json';
+	var url = 'http://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97';
 	var myObj = '';
 	var data = [];
 	var selectItem = [];
@@ -106,7 +107,7 @@
 	callAjax(url, 0);
 	// status 0=初始畫面觸發，1=從下拉選單觸發，2=從熱門區觸發
 	function callAjax(url, status) {
-	    var xhr;
+	    var xhr = void 0;
 
 	    if (window.XMLHttpRequest) {
 	        // Mozilla, Safari, ...
@@ -176,15 +177,17 @@
 	        // console.log(selectItem[i]);
 	        // console.log(typeof(selectAreaObj));
 	        // 新增option作法如下
-	        var varItem = new Option(selectItem[_i], selectItem[_i]);
-	        // console.log(varItem);
-	        selectAreaObj.options.add(varItem);
+	        var letItem = new Option(selectItem[_i], selectItem[_i]);
+	        // console.log(letItem);
+	        selectAreaObj.options.add(letItem);
 	        // console.log(typeof(selectAreaObj.options));
 	    }
 	}
 
 	// 目前頁數、總頁數、要前往的頁數、總共幾筆
-	var currentPage, totoalPage, totalItem;
+	var currentPage = void 0,
+	    totoalPage = void 0,
+	    totalItem = void 0;
 	// 一頁10筆資料
 	var perPage = 10;
 
@@ -209,8 +212,8 @@
 	    totoalPage = Math.ceil(totalItem / perPage);
 
 	    // 起始資料index,結束資料index
-	    var startItem;
-	    var endItem;
+	    var startItem = void 0;
+	    var endItem = void 0;
 	    // 如果是最後一頁要判斷抓取幾筆資料， 其餘都一定是10筆
 	    if (goPage == totoalPage) {
 	        var minusItem = totalItem - totoalPage * perPage;
@@ -319,7 +322,7 @@
 	    e.preventDefault();
 	    if (e.target.nodeName == 'A') {
 	        // 要前往哪一頁
-	        var goPage;
+	        var goPage = void 0;
 	        var pervNext = Number(e.target.dataset.num);
 	        console.log('pervNext: ' + pervNext);
 	        // 當有按下下一頁或上頁
